@@ -2,7 +2,7 @@ import os
 
 def menu():
     print("*****   MENU   *****")
-    print("1. Why do be have to take a bicycle?")
+    print("1. Why do be have to ride a bicycle?")
     print("2. Let's have lunch at school")
     print("3. The story of Tarzan")
 
@@ -29,7 +29,7 @@ if choice == 1:
 
     os.system("cls")
     print("\nYour mad lib has been created!")
-    print("\n Most doctors agree that bicycle of {} your is a/an {} form of exercise. {} a bicycle enables you to develop your {} muscles as well as {} increase the rate of a {} beat. More {} around the world {} bicycles than drive {}. No matter what kind of {} you are, always {} sure to wear a/an {} helmet. Make sure to have {} reflectors too!".format(one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirdteen))
+    print("\n Most doctors agree that the bicycle of {} your is a/an {} form of exercise. {} a bicycle enables you to develop your {} muscles as well as {} increase the rate of a {} beat. More {} around the world {} bicycles than drive {}. No matter what kind of {} you are, always {} sure to wear a/an {} helmet. Make sure to have {} reflectors too!".format(one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirdteen))
 
 
     
@@ -52,7 +52,7 @@ if choice == 2:
 
     os.system("cls")
     print("Your mad lib has been created!")
-    print("It was {} day at school, and {} was super {} for lunch. But when she went outside to eat, a {} stole her {}! {} chased the {} all over school. She {}, {}, and {} through the playground. Then she tripped on her {} and the {} escaped! Luckily, {}'s friends were willing to share their {} with her".format(one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirdteen, fourteen))
+    print("It was {} day at school, and {} was super {} for lunch. But when she went outside to eat, a {} stole her {}! {} chased the {} all over school. She {}, {}, and {} through the playground. Then she tripped on her {} and the {} escaped! Luckily, {}'s friends were willing to share their {} with her.".format(one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirdteen, fourteen))
 
 
 
@@ -70,4 +70,4 @@ if choice == 3:
 
     os.system("cls")
     print("Your mad lib has been created!")
-    print("One of the most characters in fiction is named Tarzan of the {}. Tarzan was raised by a/an {} and lives in the {} jungle in the heart of darkest {}. He spends most of his time eating {} and swinging from tree to {}. Whenever he gets angry, he beats on his chest and says, {}! This is his war cry. His best friend is a/an {} chimpanzee named Cheetah. He is supposed to be able to speak to elephants and {}.".format(one, two, three, four, five, six, seven, eight, nine))
+    print("One of the most important characters in fiction is Tarzan of the {}. Tarzan was raised by a/an {} and lives in the {} jungle in the heart of darkest {}. He spends most of his time eating {} and swinging from tree to {}. Whenever he gets angry, he beats on his chest and says, {}! This is his war cry. His best friend is a/an {} chimpanzee named Cheetah. He is supposed to be able to speak to elephants and {}.".format(one, two, three, four, five, six, seven, eight, nine))
