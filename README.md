@@ -8,3 +8,4 @@ Here are a few exercises for beginners to train with Python. I hope you like the
 4. Dice rolling simulator
 5. Hangman game
 6. Contact Book
+7. Email Slicer
