@@ -7,3 +7,4 @@ Here are a few exercises for beginners to train with Python. I hope you like the
 3. Text based adventure game
 4. Dice rolling simulator
 5. Hangman game
+6. Contact Book
