@@ -10,4 +10,5 @@ Here are a few exercises for beginners to train with Python. I hope you like the
 6. Contact Book
 7. Email Slicer
 8. Binary search algorithm
-9. Desktop Notification 
+9. Desktop Notification
+10. Rock, Paper, Scissors
