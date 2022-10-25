@@ -9,3 +9,4 @@ Here are a few exercises for beginners to train with Python. I hope you like the
 5. Hangman game
 6. Contact Book
 7. Email Slicer
+8. Binary search algorithm
