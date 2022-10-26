@@ -1,6 +1,6 @@
 # python-exercises
 
-Here are a few exercises in order to train with Python. I hope you like them!
+Here are a list of projects you can do with Python. I hope you like them!
 
 1. Mad Lib Game
 2. Guess The Number
