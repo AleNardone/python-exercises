@@ -2,15 +2,16 @@
 
 Here are a few exercises in order to train with Python. I hope you like them!
 
-1. Mad lib game
-2. Guess the number
-3. Text based adventure game
-4. Dice rolling simulator
-5. Hangman game
+1. Mad Lib Game
+2. Guess The Number
+3. Text Based Adventure Game
+4. Dice Rolling Simulator
+5. Hangman Game
 6. Contact Book
 7. Email Slicer
-8. Binary search algorithm
+8. Binary Search Algorithm
 9. Desktop Notification
 10. Rock, Paper, Scissors
 11. Jacobean Year
+12. Fibonacci Sequence
 
