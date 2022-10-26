@@ -1,6 +1,6 @@
 # python-exercises
 
-Here are a few exercises for beginners to train with Python. I hope you like them!
+Here are a few exercises in order to train with Python. I hope you like them!
 
 1. Mad lib game
 2. Guess the number
@@ -12,3 +12,5 @@ Here are a few exercises for beginners to train with Python. I hope you like the
 8. Binary search algorithm
 9. Desktop Notification
 10. Rock, Paper, Scissors
+11. Jacobean Year
+
