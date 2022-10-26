@@ -36,9 +36,6 @@ def game():
             elif computer == 'Scissors':
                 print("You win this round!!!")
                 user_score += 1
-            else:
-                print("Wrong choice... Try again!")
-                game()
 
         elif user == 'Paper' or user == 'paper':
             if computer == 'Paper':
@@ -49,9 +46,7 @@ def game():
             elif computer == 'Rock':
                 print("You win this round!!!")
                 user_score += 1
-            else:
-                print("Wrong choice... Try again!")
-                game()
+  
 
         elif user == 'Scissors' or user == 'scissors':
             if computer == 'Scissors':
@@ -62,11 +57,14 @@ def game():
             elif computer == 'Paper':
                 print("You win this round!!!")
                 user_score += 1
-            else:
-                print("Wrong choice... Try again!")
-                game()
-        
+        else:
+             print("Wrong choice... Try again!")
+             rounds -= 1
+             game()
+               
         rounds += 1
+
+
         computer = random.choice(actions)
         user = str(input("\nRock, Paper, Scissors: "))
         print("\nUSER *** COMPUTER\n")
