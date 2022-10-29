@@ -14,4 +14,5 @@ Here are a list of projects you can do with Python. I hope you like them!
 10. Rock, Paper, Scissors
 11. Jacobean Year
 12. Fibonacci Sequence
+13. Random Wikipedia Article
 
