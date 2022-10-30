@@ -1,4 +1,4 @@
-
+f = open("contactbook.txt", "a+")
 
 def menu():
     print("****** MENU ******\n")
@@ -143,18 +143,18 @@ def searchContact():
 
 
 def allContacts():
-    print("***** ALL CONTACTS *****")
-    print("\nNumber\t\tFirst Name\t\tLast Name\t\tPhone Number\t\t\t\tEmail\t\t\t")
-    for i in range(num_contacts): 
-        print(f"{i+1}\t\t{l_fname[i]}\t\t\t{l_lname[i]}\t\t\t{l_phone[i]}\t\t\t{l_email[i]}")    
-    input("\nPress enter to continue...")
-    menu()
-
-    #with open("contactbook.txt", "r") as f:
-    #    return f.readlines()
-    #f.close()
-    #print("Press enter to continue...")
+    #print("***** ALL CONTACTS *****")
+    #print("\nNumber\t\tFirst Name\t\tLast Name\t\tPhone Number\t\t\t\tEmail\t\t\t")
+    #for i in range(num_contacts): 
+    #    print(f"{i+1}\t\t{l_fname[i]}\t\t\t{l_lname[i]}\t\t\t{l_phone[i]}\t\t\t{l_email[i]}")    
+    #input("\nPress enter to continue...")
     #menu()
+
+    with open("contactbook.txt") as f:
+       content = f.read()
+       print(content)
+    input("Press enter to continue...")
+    menu()
 
 
 def modifyContact():
@@ -352,7 +352,7 @@ def modifyContact():
                     print("Invalid choice... Try again.")
                     modifyContact()
 
-    save_file()
+
 
 def removeContact():
     print("Search for a contact by: ")
@@ -375,8 +375,7 @@ def removeContact():
                 l_lname.pop(index)
                 l_phone.pop(index)
                 l_email.pop(index)
-                save_file()
-                menu()
+                addContact()
 
         elif choice == 2:
             lname = str(input("Write the last name: "))
@@ -389,8 +388,7 @@ def removeContact():
                 l_lname.pop(index)
                 l_phone.pop(index)
                 l_email.pop(index)
-                save_file()
-                menu()
+                addContact()
 
         elif choice == 3:
             phone = str(input("Write the Phone Number: "))
@@ -403,8 +401,7 @@ def removeContact():
                 l_lname.pop(index)
                 l_phone.pop(index)
                 l_email.pop(index)
-                save_file()
-                menu()
+                addContact()
 
         elif choice == 4:
            mail = str(input("Write Email: "))
@@ -417,8 +414,7 @@ def removeContact():
                 l_lname.pop(index)
                 l_phone.pop(index)
                 l_email.pop(index)
-                save_file()
-                menu()
+                addContact()
 
         elif choice == 5:
             menu()
