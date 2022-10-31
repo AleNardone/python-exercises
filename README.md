@@ -16,4 +16,5 @@ Here are a list of projects you can do with Python. I hope you like them!
 12. Fibonacci Sequence
 13. Random Wikipedia Article
 14. Random Password Generator
+15. Automate Whatsapp Message
 
