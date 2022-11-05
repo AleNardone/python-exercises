@@ -1,4 +1,4 @@
-f = open("contactbook.txt", "a+")
+f = open("contactbook.txt", "r+")
 
 def menu():
     print("****** MENU ******\n")
@@ -36,12 +36,12 @@ l_fname=[]
 l_lname=[]
 l_phone=[]
 l_email=[]
-num_contacts = 3
+num_contacts = 100
 
 
 def addContact():
-       current_contact = 0           
-       while current_contact < num_contacts:     
+            current_contact = 0            
+          
             print("Add New Contact: ")
 
             fname = str(input("First Name: "))
@@ -65,8 +65,7 @@ def addContact():
                 save_file()
                 menu()
        
-       else:     
-          menu()
+
 
             
 def searchContact():
@@ -143,18 +142,18 @@ def searchContact():
 
 
 def allContacts():
-    #print("***** ALL CONTACTS *****")
-    #print("\nNumber\t\tFirst Name\t\tLast Name\t\tPhone Number\t\t\t\tEmail\t\t\t")
-    #for i in range(num_contacts): 
-    #    print(f"{i+1}\t\t{l_fname[i]}\t\t\t{l_lname[i]}\t\t\t{l_phone[i]}\t\t\t{l_email[i]}")    
-    #input("\nPress enter to continue...")
-    #menu()
-
-    with open("contactbook.txt") as f:
-       content = f.read()
-       print(content)
-    input("Press enter to continue...")
+    print("***** ALL CONTACTS *****")
+    print("\nNumber\t\tFirst Name\t\tLast Name\t\tPhone Number\t\t\t\tEmail\t\t\t")
+    for i in range(len(l_fname)): 
+        print(f"{i+1}\t\t{l_fname[i]}\t\t\t{l_lname[i]}\t\t\t{l_phone[i]}\t\t\t{l_email[i]}")    
+    input("\nPress enter to continue...")
     menu()
+
+    #with open("contactbook.txt") as f:
+    #   content = f.read()
+    #   print(content)
+    #input("Press enter to continue...")
+    #menu()
 
 
 def modifyContact():
@@ -166,9 +165,10 @@ def modifyContact():
     print("5. Go back to main menu")
     choice= int(input("\nWhich is your choice: "))
 
-    for index in range(num_contacts):
+    for index in range(len(l_fname)):
         if choice == 1:
             fname = str(input("Write the first name: "))
+            print(l_fname)
             if fname in l_fname:
                 index = l_fname.index(fname)
                 lname = l_lname[index]
@@ -363,7 +363,7 @@ def removeContact():
     print("5. Go back to main menu")
     choice= int(input("\nWhich is your choice: "))
 
-    for index in range(num_contacts):
+    for index in range(len(l_fname)):
         if choice == 1:
             fname = str(input("Write the first name: "))
             if fname in l_fname:
@@ -375,7 +375,7 @@ def removeContact():
                 l_lname.pop(index)
                 l_phone.pop(index)
                 l_email.pop(index)
-                addContact()
+                menu()
 
         elif choice == 2:
             lname = str(input("Write the last name: "))
@@ -388,7 +388,7 @@ def removeContact():
                 l_lname.pop(index)
                 l_phone.pop(index)
                 l_email.pop(index)
-                addContact()
+                menu()
 
         elif choice == 3:
             phone = str(input("Write the Phone Number: "))
@@ -401,7 +401,7 @@ def removeContact():
                 l_lname.pop(index)
                 l_phone.pop(index)
                 l_email.pop(index)
-                addContact()
+                menu()
 
         elif choice == 4:
            mail = str(input("Write Email: "))
@@ -414,7 +414,7 @@ def removeContact():
                 l_lname.pop(index)
                 l_phone.pop(index)
                 l_email.pop(index)
-                addContact()
+                menu()
 
         elif choice == 5:
             menu()
@@ -425,7 +425,7 @@ def save_file():
      with open("contactbook.txt", "w") as f:
          f.write("***** ALL CONTACTS *****")
          f.write("\nNumber\t\tFirst Name\t\tLast Name\t\tPhone Number\t\t\t\tEmail\t\t\t")
-         for i in range(num_contacts):
+         for i in range(len(l_fname)):
             f.write(f"\n{i+1}\t\t{l_fname[i]}\t\t\t{l_lname[i]}\t\t\t{l_phone[i]}\t\t\t{l_email[i]}")
      f.close()
 
