@@ -1,4 +1,4 @@
-import fileinput
+file = open('contactbook.txt', 'r')
 
 def menu():
     print("****** MENU ******\n")
