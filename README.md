@@ -23,4 +23,5 @@ Here are a list of projects you can do with Python. I hope you like them!
 19. Tic Tac Toe Game
 20. Bank Account
 21. List of Numbers
+22. Sudoku
 
