@@ -1,4 +1,14 @@
-file = open('contactbook.txt', 'r')
+import os.path
+
+def createFile():
+    if os.path.exists('contactbook.txt'):
+        menu()
+    else:
+         with open("contactbook.txt", "w") as f:
+             f.write("***** ALL CONTACTS *****")
+             f.write("\nFirst Name\t\tLast Name\t\tPhone Number\t\t\t\tEmail\t\t\t")
+         f.close()
+
 
 def menu():
     print("****** MENU ******\n")
@@ -7,7 +17,9 @@ def menu():
     print("3. Show All Contacts")
     print("4. Modify Contact")
     print("5. Remove Contact")
-    print("6. Exit")
+    print("6. Delete all contacts")
+    print("7. Delete file")
+    print("8. Exit")
     choice=int(input("\nWhat do you want to do? "))
 
     if choice == 1:
@@ -26,61 +38,42 @@ def menu():
         removeContact()
 
     elif choice == 6:
+        deleteContact()
+
+    elif choice == 7:
+        deleteFile()
+
+    elif choice == 8:
         exit(0)
 
     else:
         print("Invalid choice... Try again.")
         menu()
-        
-l_fname=[]
-l_lname=[]
-l_phone=[]
-l_email=[]
-num_contacts = 100
-current_contact = 0
 
 
-def addContact():           
-       current_contact = 0
-        
-       if current_contact == 0:
-            userData()
-                  
-       elif current_contact > 0:
-            userData()
 
-       current_contact += 1
-
-       if current_contact <= num_contacts:
-           another = input("\nAdd another contact? (Y/N) ")
-           if another == 'Y' or another == 'y':
-              addContact()                        
-           else:
-              save_file()
-              menu()
-       else:
-            print('Your contact book is full... You have to remove a contact')
-            removeContact()
-
-def userData():
+def addContact():
     print("Add New Contact: ")
 
     fname = str(input("First Name: "))
-    l_fname.append(fname)
-
     lname = str(input("Last Name: "))
-    l_lname.append(lname)
-
     phone = str(input("Phone Number: "))
-    l_phone.append(phone)
-
     mail = str(input("Email: "))
-    l_email.append(mail)
-
- 
+    
+    with open('contactbook.txt', 'a') as file:
+        file.write(f"\n{fname}\t\t\t{lname}\t\t\t{phone}\t\t\t{mail}")
+    file.close()
+            
+    another = input("\nAdd another contact? (Y/N) ")
+    if another == 'Y' or another == 'y':
+         addContact()                        
+    else:
+                
+         menu()
 
             
 def searchContact():
+
     print("Search for a contact by: ")
     print("1. First Name")
     print("2. Last Name")
@@ -209,7 +202,7 @@ def modifyContact():
                 else:
                     print('Data not found... Try again')
                     modifyContact()                     
-
+        
 
     elif choice == 2:
                 modifyline = []
@@ -343,7 +336,7 @@ def removeContact():
     elif choice == 2:
         removelines = []
         found = False
-        lname = str(input("Write the first name: "))
+        lname = str(input("Write the last name: "))
         with open('contactbook.txt', 'r') as file:
             read_it = file.read()
             for line in read_it.splitlines():
@@ -371,7 +364,7 @@ def removeContact():
     elif choice == 3:
         removelines = []
         found = False
-        phone = str(input("Write the first name: "))
+        phone = str(input("Write the phone number: "))
         with open('contactbook.txt', 'r+') as file:
             read_it = file.read()
             for line in read_it.splitlines():
@@ -399,7 +392,7 @@ def removeContact():
     elif choice == 4:
         removelines = []
         found = False
-        mail = str(input("Write the first name: "))
+        mail = str(input("Write the email: "))
         with open('contactbook.txt', 'r+') as file:
             read_it = file.read()
             for line in read_it.splitlines():
@@ -431,17 +424,30 @@ def removeContact():
         print('Invalid choice... Choose one from above')
         removeContact()
 
+
+def deleteContact():
+    answer = input("Are you sure you want to delete all contacts? (Y/N) ")
+    if answer == 'Y' or answer == 'y':
+        with open("contactbook.txt", "w") as f:
+             f.write("***** ALL CONTACTS *****")
+             f.write("\nFirst Name\t\tLast Name\t\tPhone Number\t\t\t\tEmail\t\t\t")
+    f.close()
+    menu()
+
+def deleteFile():
+    answer = input("Are you sure you want to delete the file? (Y/N) ")
+    if answer == 'Y' or answer == 'y':
+        os.remove('contactbook.txt')
+    else:
+        menu()
+
+    print('File was deleted')
+    input('Press any key to go to the main menu')
+    menu()
+
     
 
-def save_file():
-     with open("contactbook.txt", "w") as f:
-         f.write("***** ALL CONTACTS *****")
-         f.write("\nFirst Name\t\tLast Name\t\tPhone Number\t\t\t\tEmail\t\t\t")
-         for i in range(len(l_fname)):
-            f.write(f"\n{l_fname[i]}\t\t\t{l_lname[i]}\t\t\t{l_phone[i]}\t\t\t{l_email[i]}")
-     f.close()
 
 if __name__ == "__main__":
-    menu()
-    save_file()
+    createFile()
 
