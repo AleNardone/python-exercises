@@ -1,7 +1,8 @@
 import os.path
 
 def createFile():
-    if os.path.exists('contactbook.txt'):
+    is_file =  os.path.isfile('contactbook.txt')
+    if is_file == True:
         menu()
     else:
          with open("contactbook.txt", "w") as f:
